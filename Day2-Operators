@@ -1,0 +1,17 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+class Solution {
+    static void Main(String[] args) {
+        var mealPrice= double.Parse(Console.ReadLine());
+        var tipPercent = int.Parse(Console.ReadLine());
+        var taxPercent = int.Parse(Console.ReadLine());
+        
+        var tip = tipPercent * mealPrice/100;
+        var tax = taxPercent * mealPrice/100;
+        
+        var totalCost = Math.Round(mealPrice + tip + tax);
+        
+        Console.WriteLine("The total meal cost is {0} dollars.", totalCost);
+    }
+}
