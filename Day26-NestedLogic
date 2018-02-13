@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+class Solution {
+    static void Main(String[] args) {
+        var dateReturned = Console.ReadLine().Split(' ');
+            var dayR = int.Parse(dateReturned[0]);
+            var monthR = int.Parse(dateReturned[1]);
+            var yearR = int.Parse(dateReturned[2]);
+        
+       var dateDue = Console.ReadLine().Split(' ');
+            var dayD = int.Parse(dateDue[0]);
+            var monthD = int.Parse(dateDue[1]);
+            var yearD = int.Parse(dateDue[2]);
+        
+        var fine = 0;
+        
+        if(yearR > yearD)
+        {
+            fine = 10000;
+        }
+        else if(yearR == yearD && monthR > monthD)
+        {
+            fine = (monthR-monthD) * 500;
+        }
+        else if(monthR == monthD && dayR > dayD)
+        {
+            fine = (dayR-dayD)* 15;
+        }
+            Console.WriteLine(fine);
+    }
+
+}
